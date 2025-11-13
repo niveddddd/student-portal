@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Faculty Login - Srinivas University</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to bottom right, #e0f7fa, #f1f8ff);
+      color: #333;
+    }
+    header {
+      background: #002244;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    .box {
+      background: white;
+      padding: 30px;
+      margin: 50px auto;
+      max-width: 500px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      background-color: #0044cc;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      width: 100%;
+    }
+    button:hover {
+      background-color: #003399;
+    }
+    h2 {
+      color: #002244;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    footer {
+      background: #002244;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Srinivas University - Faculty Login</h1>
+  </header>
+
+  <div class="box">
+    <h2>Faculty Sign In</h2>
+    <form action="file:///C:/Users/nived/OneDrive/Desktop/mini%20project/faculty%20portal/marking%20page.html" method="post">
+      <label for="faculty-id">Faculty ID:</label>
+      <input type="text" id="faculty-id" name="faculty-id" required>
+
+      <label for="faculty-name">Name:</label>
+      <input type="text" id="faculty-name" name="faculty-name" required>
+
+      <label for="faculty-password">Password:</label>
+      <input type="password" id="faculty-password" name="faculty-password" required minlength="6">
+
+      <button type="submit">Login</button>
+    </form>
+  </div>
+
+  <footer>
+    <b>Srinivas University ICIS</b>
+  </footer>
+
+</body>
+</html>

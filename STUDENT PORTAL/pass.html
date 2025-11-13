@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Student Registration Portal</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to bottom right, #e0f7fa, #f1f8ff);
+      color: #333;
+    }
+    header {
+      background: #002244;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    .box {
+      background: white;
+      padding: 20px;
+      margin: 40px auto;
+      max-width: 500px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    input[type="submit"] {
+      background-color: #0044cc;
+      color: white;
+      border: none;
+      padding: 10px;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    h2 {
+      color: #002244;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    footer {
+      background: #002244;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Srinivas University - Student Registration</h1>
+  </header>
+
+  <div class="box">
+    <h2>Register Here</h2>
+    <form action="C:\Users\nived\OneDrive\Documents\mini project\STUDENT PORTAL\home2.html" method="get">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="regno">Register Number:</label>
+      <input type="text" id="regno" name="regno" required>
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required minlength="6">
+
+      <label for="batch">Batch:</label>
+      <select id="batch" name="batch" required>
+        <optgroup label="A Group">
+          <option value="A1">A1</option>
+          <option value="A2">A2</option>
+          <option value="A3">A3</option>
+          <option value="A4">A4</option>
+          <option value="A5">A5</option>
+          <option value="A6">A6</option>
+          <option value="A7">A7</option>
+          <option value="A8">A8</option>
+          <option value="A9">A9</option>
+          <option value="A10">A10</option>
+        </optgroup>
+        <optgroup label="B Group">
+          <option value="B1">B1</option>
+          <option value="B2">B2</option>
+          <option value="B3">B3</option>
+          <option value="B4">B4</option>
+          <option value="B5">B5</option>
+          <option value="B6">B6</option>
+          <option value="B7">B7</option>
+          <option value="B8">B8</option>
+          <option value="B9">B9</option>
+        </optgroup>
+        <optgroup label="C Group">
+          <option value="C1">C1</option>
+          <option value="C2">C2</option>
+          <option value="C3">C3</option>
+          <option value="C4">C4</option>
+          <option value="C5">C5</option>
+          <option value="C6">C6</option>
+          <option value="C7">C7</option>
+        </optgroup>
+      </select>
+
+      <input type="submit" value="Register">
+    </form>
+  </div>
+
+  <footer>
+    <b>Srinivas University ICIS</b>
+  </footer>
+
+</body>
+</html>

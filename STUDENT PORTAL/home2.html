@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <title>Srinivas University ICIS | Portal</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"/>
+  <style>
+    * { box-sizing: border-box; padding: 0; margin: 0; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to bottom right, #e0f7fa, #f1f8ff);
+      color: #333;
+    }
+    header {
+      background: #002244;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    header img {
+      height: 100px;
+      margin-bottom: 10px;
+    }
+    nav {
+      background: #004080;
+      padding: 12px;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .section {
+      display: none;
+      padding: 30px;
+      animation: fade 0.5s ease;
+    }
+    .active {
+      display: block;
+    }
+    @keyframes fade {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    .box {
+      background: white;
+      padding: 20px;
+      margin: 20px auto;
+      max-width: 500px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .button {
+      border: 1px solid #FFFFFF;
+      border-radius: 5px;
+      padding: 10px 20px;
+      background-color: #0D1E3F;
+      color: #FFFFFF;
+      cursor: pointer;
+      text-align: center;
+      display: inline-block;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .button:hover {
+      background-color: #0012;
+    }
+    footer {
+      background: #002244;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+    }
+    h2 {
+      color: #002244;
+      margin-bottom: 10px;
+    }
+    ul li {
+      margin: 10px 0;
+    }
+  </style>
+</head>
+<body>
+<header>
+  <img alt="Srinivas University Logo" src="C:/Users/nived/Downloads/logo.jpeg"/>
+  <h1>Srinivas University - ICIS</h1>
+  <p>Assignment Submission Portal</p>
+</header>
+
+<nav>
+  <a onclick="showSection('home')">Home</a>
+  <a onclick="showSection('portal')">Assignment Portal</a>
+</nav>
+
+<!-- Home Section -->
+<div class="section active" id="home">
+  <div class="box">
+    <h2>Welcome to Srinivas University</h2>
+    <p>Explore the Institute of Computer and Information Sciences (ICIS). Use the navigation above to learn about the university or access the assignment portal for students and faculty.</p>
+  </div>
+</div>
+
+<!-- Assignment Portal Section -->
+<div class="section" id="portal">
+  <div class="box">
+    <h2>Student Login</h2>
+    <form id="loginForm">
+      <input id="student-id" name="student-id" placeholder="Student ID" required type="text"/>
+      <input id="student-name" name="student-name" placeholder="Name" required type="text"/>
+      <input id="student-password" name="student-password" placeholder="Password" required type="password" minlength="6"/>
+      <label id="captcha-label"></label>
+      <input id="captcha-input" name="captcha" required type="text" placeholder="Answer the captcha"/>
+      <label>Select Batch:</label>
+      <select id="batch" name="batch" required>
+        <option value="A1">A1</option><option value="A2">A2</option><option value="A3">A3</option>
+        <option value="A4">A4</option><option value="A5">A5</option><option value="A6">A6</option>
+        <option value="A7">A7</option><option value="A8">A8</option><option value="A9">A9</option>
+        <option value="A10">A10</option><option value="B1">B1</option><option value="B2">B2</option>
+        <option value="B3">B3</option><option value="B4">B4</option><option value="B5">B5</option>
+        <option value="B6">B6</option><option value="B7">B7</option><option value="B8">B8</option>
+        <option value="B9">B9</option><option value="C1">C1</option><option value="C2">C2</option>
+        <option value="C3">C3</option><option value="C4">C4</option><option value="C5">C5</option>
+        <option value="C6">C6</option><option value="C7">C7</option>
+      </select>
+      <button class="button" type="submit">SIGN IN</button>
+    </form>
+    <a class="button" href="C:\Users\nived\OneDrive\Documents\mini project\STUDENT PORTAL\pass.html" style="margin-top: 10px;">SIGN UP</a>
+  </div>
+</div>
+
+<footer>
+  <b>Srinivas University ICIS</b>
+</footer>
+
+<script>
+  function showSection(id) {
+    document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+  }
+
+  function generateCaptcha() {
+    const a = Math.floor(Math.random() * 10);
+    const b = Math.floor(Math.random() * 10);
+    document.getElementById("captcha-label").innerText = `Enter Captcha: ${a} + ${b} = `;
+    document.getElementById("captcha-label").setAttribute("data-answer", a + b);
+  }
+
+  generateCaptcha(); // on page load
+
+  document.getElementById("loginForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+    const correct = parseInt(document.getElementById("captcha-label").getAttribute("data-answer"));
+    const userInput = parseInt(document.getElementById("captcha-input").value);
+    if (userInput !== correct) {
+      alert("Incorrect captcha. Please try again.");
+      generateCaptcha();
+      return;
+    }
+
+    const batch = document.getElementById("batch").value;
+    const path = `submission 21/submission_${batch}.html`;
+    window.location.href = path;
+  });
+</script>
+</body>
+</html>

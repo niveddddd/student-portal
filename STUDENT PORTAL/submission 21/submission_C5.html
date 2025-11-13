@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Assignment Submission - C5</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; padding: 0; margin: 0; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to bottom right, #e0f7fa, #f1f8ff);
+      color: #333;
+    }
+    header {
+      background: #002244;
+      color: white;
+      text-align: center;
+      padding: 10px;
+    }
+    .container {
+      background:#ffffff;
+      max-width: 700px;
+      margin: 30px auto;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    input, select {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0 20px 0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 16px;
+    }
+    button {
+      background:#0044cc;
+      color: white;
+      border: none;
+      padding: 12px;
+      font-size: 16px;
+      border-radius: 6px;
+      width: 100%;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    button:hover { background: #0033aa; }
+    footer {
+      background: #002244;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+    }
+    h2 {
+      color: #002244;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    label { font-weight: 600; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Srinivas University - ICIS</h1>
+    <p>Assignment Submission Form - C5</p>
+  </header>
+  <div class="container">
+    <h2>Submit Your Assignment</h2>
+    <form id="assignmentForm">
+      <label for="studentName">Student Name:</label>
+      <input type="text" id="studentName" name="studentName" required>
+
+      <label for="subBatch">Sub-Batch:</label>
+      <select id="subBatch" readonly>
+        <option selected>C5</option>
+      </select>
+
+      <label for="facultyName">Faculty Name:</label>
+      <select id="facultyName" required>
+        <option>--Select Faculty--</option>
+      </select>
+
+      <label for="subject">Subject:</label>
+      <select id="subject" required>
+        <option>--Select Subject--</option>
+      </select>
+
+      <label for="assignmentTitle">Assignment Title:</label>
+      <input type="text" id="assignmentTitle" name="assignmentTitle" required>
+
+      <label for="assignmentFile">Upload Assignment (PDF/DOC):</label>
+      <input type="file" id="assignmentFile" name="assignmentFile" accept=".pdf,.doc,.docx" required>
+
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+  <footer>
+    <b>Srinivas University ICIS</b>
+  </footer>
+</body>
+</html>
